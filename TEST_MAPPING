@@ -2,6 +2,9 @@
 {
   "presubmit": [
     {
+      "name": "ZipFuseTest"
+    },
+    {
       "name": "authfs_device_test_src_lib"
     },
     {
