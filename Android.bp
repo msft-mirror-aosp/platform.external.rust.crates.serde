@@ -64,7 +64,6 @@ rust_library {
         "range_inclusive",
         "serde_derive",
         "std_atomic",
-        // "std_atomic64", // not for arm/arm64
         "systemtime_checked_add",
     ],
     proc_macros: ["libserde_derive"],
@@ -75,7 +74,7 @@ rust_library {
 }
 
 // dependent_library ["feature_list"]
-//   proc-macro2-1.0.26 "default,proc-macro"
+//   proc-macro2-1.0.27 "default,proc-macro"
 //   quote-1.0.9 "default,proc-macro"
 //   serde_derive-1.0.126 "default"
 //   syn-1.0.72 "clone-impls,default,derive,parsing,printing,proc-macro,quote"
