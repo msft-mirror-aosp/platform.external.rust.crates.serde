@@ -74,8 +74,8 @@ rust_library {
 }
 
 // dependent_library ["feature_list"]
-//   proc-macro2-1.0.27 "default,proc-macro"
+//   proc-macro2-1.0.28 "default,proc-macro"
 //   quote-1.0.9 "default,proc-macro"
-//   serde_derive-1.0.126 "default"
-//   syn-1.0.72 "clone-impls,default,derive,parsing,printing,proc-macro,quote"
+//   serde_derive-1.0.127 "default"
+//   syn-1.0.74 "clone-impls,default,derive,parsing,printing,proc-macro,quote"
 //   unicode-xid-0.2.2 "default"
