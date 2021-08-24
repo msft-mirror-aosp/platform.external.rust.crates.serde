@@ -5,10 +5,31 @@
       "name": "ZipFuseTest"
     },
     {
+      "name": "apkdmverity.test"
+    },
+    {
       "name": "authfs_device_test_src_lib"
     },
     {
+      "name": "base64_device_test_tests_decode"
+    },
+    {
+      "name": "base64_device_test_tests_encode"
+    },
+    {
+      "name": "base64_device_test_tests_helpers"
+    },
+    {
       "name": "either_device_test_src_lib"
+    },
+    {
+      "name": "microdroid_manager_test"
+    },
+    {
+      "name": "serde-xml-rs_device_test_src_lib"
+    },
+    {
+      "name": "serde-xml-rs_device_test_tests_round_trip"
     },
     {
       "name": "serde_cbor_device_test_src_lib"
@@ -41,7 +62,22 @@
       "name": "serde_test_device_test_src_lib"
     },
     {
+      "name": "slab_device_test_src_lib"
+    },
+    {
+      "name": "slab_device_test_tests_serde"
+    },
+    {
+      "name": "slab_device_test_tests_slab"
+    },
+    {
       "name": "unicode-bidi_device_test_src_lib"
+    },
+    {
+      "name": "unicode-xid_device_test_src_lib"
+    },
+    {
+      "name": "unicode-xid_device_test_tests_exhaustive_tests"
     },
     {
       "name": "url_device_test_src_lib"
@@ -51,6 +87,9 @@
     },
     {
       "name": "url_device_test_tests_unit"
+    },
+    {
+      "name": "virtualizationservice_device_test"
     }
   ]
 }
