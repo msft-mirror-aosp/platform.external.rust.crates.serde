@@ -42,6 +42,8 @@ rust_library {
     name: "libserde",
     host_supported: true,
     crate_name: "serde",
+    cargo_env_compat: true,
+    cargo_pkg_version: "1.0.130",
     srcs: ["src/lib.rs"],
     edition: "2015",
     features: [
@@ -58,6 +60,7 @@ rust_library {
         "de_boxed_path",
         "de_rc_dst",
         "integer128",
+        "iterator_try_fold",
         "num_nonzero",
         "num_nonzero_signed",
         "ops_bound",
@@ -72,10 +75,3 @@ rust_library {
         "com.android.virt",
     ],
 }
-
-// dependent_library ["feature_list"]
-//   proc-macro2-1.0.28 "default,proc-macro"
-//   quote-1.0.9 "default,proc-macro"
-//   serde_derive-1.0.127 "default"
-//   syn-1.0.74 "clone-impls,default,derive,parsing,printing,proc-macro,quote"
-//   unicode-xid-0.2.2 "default"
