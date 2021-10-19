@@ -9,5 +9,6 @@
   "dependencies": true,
   "device": true,
   "features": "default,derive",
-  "run": true
+  "run": true,
+  "tests": true
 }
