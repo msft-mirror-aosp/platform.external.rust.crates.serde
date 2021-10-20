@@ -2,15 +2,6 @@
 {
   "presubmit": [
     {
-      "name": "ZipFuseTest"
-    },
-    {
-      "name": "apkdmverity.test"
-    },
-    {
-      "name": "authfs_device_test_src_lib"
-    },
-    {
       "name": "base64_device_test_tests_decode"
     },
     {
@@ -18,6 +9,48 @@
     },
     {
       "name": "base64_device_test_tests_helpers"
+    },
+    {
+      "name": "bitflags_device_test_src_lib"
+    },
+    {
+      "name": "bitflags_device_test_tests_basic"
+    },
+    {
+      "name": "bytes_device_test_src_lib"
+    },
+    {
+      "name": "bytes_device_test_tests_test_buf"
+    },
+    {
+      "name": "bytes_device_test_tests_test_buf_mut"
+    },
+    {
+      "name": "bytes_device_test_tests_test_bytes"
+    },
+    {
+      "name": "bytes_device_test_tests_test_bytes_odd_alloc"
+    },
+    {
+      "name": "bytes_device_test_tests_test_bytes_vec_alloc"
+    },
+    {
+      "name": "bytes_device_test_tests_test_chain"
+    },
+    {
+      "name": "bytes_device_test_tests_test_debug"
+    },
+    {
+      "name": "bytes_device_test_tests_test_iter"
+    },
+    {
+      "name": "bytes_device_test_tests_test_reader"
+    },
+    {
+      "name": "bytes_device_test_tests_test_serde"
+    },
+    {
+      "name": "bytes_device_test_tests_test_take"
     },
     {
       "name": "either_device_test_src_lib"
@@ -32,7 +65,7 @@
       "name": "legacykeystore_test"
     },
     {
-      "name": "microdroid_manager_test"
+      "name": "rand_chacha_device_test_src_lib"
     },
     {
       "name": "serde-xml-rs_device_test_src_lib"
@@ -65,6 +98,9 @@
       "name": "serde_cbor_device_test_tests_value"
     },
     {
+      "name": "serde_device_test_src_lib"
+    },
+    {
       "name": "serde_test_device_test_src_lib"
     },
     {
@@ -93,9 +129,6 @@
     },
     {
       "name": "url_device_test_tests_unit"
-    },
-    {
-      "name": "virtualizationservice_device_test"
     }
   ]
 }
