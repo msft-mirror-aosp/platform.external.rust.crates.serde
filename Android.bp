@@ -75,3 +75,51 @@ rust_library {
         "com.android.virt",
     ],
 }
+
+rust_defaults {
+    name: "serde_test_defaults",
+    crate_name: "serde",
+    srcs: ["src/lib.rs"],
+    cargo_env_compat: true,
+    cargo_pkg_version: "1.0.130",
+    test_suites: ["general-tests"],
+    auto_gen_config: true,
+    edition: "2015",
+    features: [
+        "default",
+        "derive",
+        "serde_derive",
+        "std",
+    ],
+    cfgs: [
+        "core_duration",
+        "core_reverse",
+        "core_try_from",
+        "de_boxed_c_str",
+        "de_boxed_path",
+        "de_rc_dst",
+        "integer128",
+        "iterator_try_fold",
+        "num_nonzero",
+        "num_nonzero_signed",
+        "ops_bound",
+        "range_inclusive",
+        "serde_derive",
+        "std_atomic",
+        "systemtime_checked_add",
+    ],
+    proc_macros: ["libserde_derive"],
+}
+
+rust_test_host {
+    name: "serde_host_test_src_lib",
+    defaults: ["serde_test_defaults"],
+    test_options: {
+        unit_test: true,
+    },
+}
+
+rust_test {
+    name: "serde_device_test_src_lib",
+    defaults: ["serde_test_defaults"],
+}
