@@ -7,6 +7,7 @@
     "std_atomic64"
   ],
   "dependencies": true,
+  "vendor_available": true,
   "device": true,
   "features": "default,derive",
   "run": true,
