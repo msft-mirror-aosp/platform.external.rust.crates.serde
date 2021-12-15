@@ -41,7 +41,6 @@ license {
 rust_library {
     name: "libserde",
     host_supported: true,
-    vendor_available: true,
     crate_name: "serde",
     cargo_env_compat: true,
     cargo_pkg_version: "1.0.130",
@@ -75,16 +74,21 @@ rust_library {
         "//apex_available:platform",
         "com.android.virt",
     ],
+    vendor_available: true,
 }
 
-rust_defaults {
-    name: "serde_test_defaults",
+rust_test {
+    name: "serde_test_src_lib",
+    host_supported: true,
     crate_name: "serde",
-    srcs: ["src/lib.rs"],
     cargo_env_compat: true,
     cargo_pkg_version: "1.0.130",
+    srcs: ["src/lib.rs"],
     test_suites: ["general-tests"],
     auto_gen_config: true,
+    test_options: {
+        unit_test: true,
+    },
     edition: "2015",
     features: [
         "default",
@@ -110,17 +114,4 @@ rust_defaults {
         "systemtime_checked_add",
     ],
     proc_macros: ["libserde_derive"],
-}
-
-rust_test_host {
-    name: "serde_host_test_src_lib",
-    defaults: ["serde_test_defaults"],
-    test_options: {
-        unit_test: true,
-    },
-}
-
-rust_test {
-    name: "serde_device_test_src_lib",
-    defaults: ["serde_test_defaults"],
 }
