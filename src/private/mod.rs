@@ -1,6 +1,6 @@
-#[cfg(not(no_serde_derive))]
+#[cfg(serde_derive)]
 pub mod de;
-#[cfg(not(no_serde_derive))]
+#[cfg(serde_derive)]
 pub mod ser;
 
 pub mod size_hint;
@@ -14,7 +14,6 @@ pub use lib::default::Default;
 pub use lib::fmt::{self, Formatter};
 pub use lib::marker::PhantomData;
 pub use lib::option::Option::{self, None, Some};
-pub use lib::ptr;
 pub use lib::result::Result::{self, Err, Ok};
 
 pub use self::string::from_utf8_lossy;
@@ -22,7 +21,7 @@ pub use self::string::from_utf8_lossy;
 #[cfg(any(feature = "alloc", feature = "std"))]
 pub use lib::{ToString, Vec};
 
-#[cfg(not(no_core_try_from))]
+#[cfg(core_try_from)]
 pub use lib::convert::TryFrom;
 
 mod string {
