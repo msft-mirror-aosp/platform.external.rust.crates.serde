@@ -118,8 +118,6 @@ use lib::*;
 
 pub mod value;
 
-#[cfg(not(no_integer128))]
-mod format;
 mod ignored_any;
 mod impls;
 mod utf8;
@@ -1009,7 +1007,7 @@ pub trait Deserializer<'de>: Sized {
     /// `Deserializer`.
     ///
     /// If the `Visitor` would benefit from taking ownership of `String` data,
-    /// indicate this to the `Deserializer` by using `deserialize_string`
+    /// indiciate this to the `Deserializer` by using `deserialize_string`
     /// instead.
     fn deserialize_str<V>(self, visitor: V) -> Result<V::Value, Self::Error>
     where
@@ -1215,20 +1213,6 @@ pub trait Deserializer<'de>: Sized {
     fn is_human_readable(&self) -> bool {
         true
     }
-
-    // Not public API.
-    #[cfg(all(not(no_serde_derive), any(feature = "std", feature = "alloc")))]
-    #[doc(hidden)]
-    fn __deserialize_content<V>(
-        self,
-        _: ::actually_private::T,
-        visitor: V,
-    ) -> Result<::private::de::Content<'de>, Self::Error>
-    where
-        V: Visitor<'de, Value = ::private::de::Content<'de>>,
-    {
-        self.deserialize_any(visitor)
-    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -1368,10 +1352,8 @@ pub trait Visitor<'de>: Sized {
         where
             E: Error,
         {
-            let mut buf = [0u8; 58];
-            let mut writer = format::Buf::new(&mut buf);
-            fmt::Write::write_fmt(&mut writer, format_args!("integer `{}` as i128", v)).unwrap();
-            Err(Error::invalid_type(Unexpected::Other(writer.as_str()), &self))
+            let _ = v;
+            Err(Error::invalid_type(Unexpected::Other("i128"), &self))
         }
     }
 
@@ -1430,10 +1412,8 @@ pub trait Visitor<'de>: Sized {
         where
             E: Error,
         {
-            let mut buf = [0u8; 57];
-            let mut writer = format::Buf::new(&mut buf);
-            fmt::Write::write_fmt(&mut writer, format_args!("integer `{}` as u128", v)).unwrap();
-            Err(Error::invalid_type(Unexpected::Other(writer.as_str()), &self))
+            let _ = v;
+            Err(Error::invalid_type(Unexpected::Other("u128"), &self))
         }
     }
 
@@ -1734,7 +1714,7 @@ pub trait SeqAccess<'de> {
     }
 }
 
-impl<'de, 'a, A: ?Sized> SeqAccess<'de> for &'a mut A
+impl<'de, 'a, A> SeqAccess<'de> for &'a mut A
 where
     A: SeqAccess<'de>,
 {
@@ -1887,7 +1867,7 @@ pub trait MapAccess<'de> {
     }
 }
 
-impl<'de, 'a, A: ?Sized> MapAccess<'de> for &'a mut A
+impl<'de, 'a, A> MapAccess<'de> for &'a mut A
 where
     A: MapAccess<'de>,
 {
