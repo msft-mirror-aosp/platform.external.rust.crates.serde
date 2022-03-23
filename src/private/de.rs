@@ -206,7 +206,6 @@ mod content {
     use lib::*;
 
     use __private::size_hint;
-    use actually_private;
     use de::{
         self, Deserialize, DeserializeSeed, Deserializer, EnumAccess, Expected, IgnoredAny,
         MapAccess, SeqAccess, Unexpected, Visitor,
@@ -216,7 +215,7 @@ mod content {
     /// deserializing untagged enums and internally tagged enums.
     ///
     /// Not public API. Use serde-value instead.
-    #[derive(Debug, Clone)]
+    #[derive(Debug)]
     pub enum Content<'de> {
         Bool(bool),
 
@@ -295,7 +294,7 @@ mod content {
             // Untagged and internally tagged enums are only supported in
             // self-describing formats.
             let visitor = ContentVisitor { value: PhantomData };
-            deserializer.__deserialize_content(actually_private::T, visitor)
+            deserializer.deserialize_any(visitor)
         }
     }
 
@@ -1428,18 +1427,6 @@ mod content {
             drop(self);
             visitor.visit_unit()
         }
-
-        fn __deserialize_content<V>(
-            self,
-            _: actually_private::T,
-            visitor: V,
-        ) -> Result<Content<'de>, Self::Error>
-        where
-            V: Visitor<'de, Value = Content<'de>>,
-        {
-            let _ = visitor;
-            Ok(self.content)
-        }
     }
 
     impl<'de, E> ContentDeserializer<'de, E> {
@@ -2151,18 +2138,6 @@ mod content {
         {
             visitor.visit_unit()
         }
-
-        fn __deserialize_content<V>(
-            self,
-            _: actually_private::T,
-            visitor: V,
-        ) -> Result<Content<'de>, Self::Error>
-        where
-            V: Visitor<'de, Value = Content<'de>>,
-        {
-            let _ = visitor;
-            Ok(self.content.clone())
-        }
     }
 
     impl<'a, 'de, E> ContentRefDeserializer<'a, 'de, E> {
@@ -2857,7 +2832,7 @@ where
     where
         T: DeserializeSeed<'de>,
     {
-        for item in &mut self.iter {
+        while let Some(item) = self.iter.next() {
             // Items in the vector are nulled out when used by a struct.
             if let Some((ref key, ref content)) = *item {
                 self.pending_content = Some(content);
@@ -2959,7 +2934,7 @@ where
     where
         T: DeserializeSeed<'de>,
     {
-        for item in &mut self.iter {
+        while let Some(item) = self.iter.next() {
             if let Some((ref key, ref content)) = *item {
                 // Do not take(), instead borrow this entry. The internally tagged
                 // enum does its own buffering so we can't tell whether this entry
