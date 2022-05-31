@@ -41,6 +41,50 @@
       "path": "external/rust/crates/url"
     }
   ],
+  "postsubmit": [
+    {
+      "name": "ZipFuseTest"
+    },
+    {
+      "name": "apkdmverity.test"
+    },
+    {
+      "name": "authfs_device_test_src_lib"
+    },
+    {
+      "name": "diced_test"
+    },
+    {
+      "name": "diced_vendor_test"
+    },
+    {
+      "name": "keystore2_client_tests"
+    },
+    {
+      "name": "keystore2_legacy_blobs_test"
+    },
+    {
+      "name": "keystore2_test"
+    },
+    {
+      "name": "keystore2_test_utils_test"
+    },
+    {
+      "name": "legacykeystore_test"
+    },
+    {
+      "name": "libcert_request_validator_tests"
+    },
+    {
+      "name": "microdroid_manager_test"
+    },
+    {
+      "name": "serde_test_src_lib"
+    },
+    {
+      "name": "virtualizationservice_device_test"
+    }
+  ],
   "presubmit": [
     {
       "name": "ZipFuseTest"
@@ -56,6 +100,12 @@
     },
     {
       "name": "diced_vendor_test"
+    },
+    {
+      "name": "keystore2_client_tests"
+    },
+    {
+      "name": "keystore2_legacy_blobs_test"
     },
     {
       "name": "keystore2_test"
@@ -94,6 +144,12 @@
     },
     {
       "name": "diced_vendor_test"
+    },
+    {
+      "name": "keystore2_client_tests"
+    },
+    {
+      "name": "keystore2_legacy_blobs_test"
     },
     {
       "name": "keystore2_test"
