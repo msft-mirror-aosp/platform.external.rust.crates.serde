@@ -49,6 +49,7 @@ rust_library {
     features: [
         "default",
         "derive",
+        "rc",
         "serde_derive",
         "std",
     ],
@@ -76,6 +77,7 @@ rust_test {
     features: [
         "default",
         "derive",
+        "rc",
         "serde_derive",
         "std",
     ],
