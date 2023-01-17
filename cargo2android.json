@@ -8,7 +8,7 @@
   ],
   "dependencies": true,
   "device": true,
-  "features": "default,derive",
+  "features": "default,derive,rc",
   "run": true,
   "tests": true,
   "vendor-available": true
