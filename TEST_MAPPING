@@ -73,9 +73,6 @@
       "name": "legacykeystore_test"
     },
     {
-      "name": "libcert_request_validator_tests"
-    },
-    {
       "name": "microdroid_manager_test"
     },
     {
@@ -115,9 +112,6 @@
     },
     {
       "name": "legacykeystore_test"
-    },
-    {
-      "name": "libcert_request_validator_tests"
     },
     {
       "name": "microdroid_manager_test"
