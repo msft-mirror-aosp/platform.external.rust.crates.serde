@@ -11,7 +11,16 @@
       "path": "external/rust/crates/bytes"
     },
     {
+      "path": "external/rust/crates/coset"
+    },
+    {
       "path": "external/rust/crates/either"
+    },
+    {
+      "path": "external/rust/crates/hashbrown"
+    },
+    {
+      "path": "external/rust/crates/hashlink"
     },
     {
       "path": "external/rust/crates/rand_chacha"
@@ -52,10 +61,19 @@
       "name": "authfs_device_test_src_lib"
     },
     {
+      "name": "avmdtool.test"
+    },
+    {
+      "name": "avmdtool_tests"
+    },
+    {
       "name": "diced_test"
     },
     {
       "name": "diced_vendor_test"
+    },
+    {
+      "name": "encryptedstore.test"
     },
     {
       "name": "keystore2_client_tests"
@@ -73,13 +91,34 @@
       "name": "legacykeystore_test"
     },
     {
+      "name": "libapkverify.integration_test"
+    },
+    {
+      "name": "libapkverify.test"
+    },
+    {
+      "name": "libdm_rust.test"
+    },
+    {
+      "name": "libkmr_derive_test"
+    },
+    {
+      "name": "libkmr_hal_test"
+    },
+    {
+      "name": "libpvmfw_avb.integration_test"
+    },
+    {
       "name": "microdroid_manager_test"
     },
     {
       "name": "serde_test_src_lib"
     },
     {
-      "name": "virtualizationservice_device_test"
+      "name": "virtualizationmanager_device_test"
+    },
+    {
+      "name": "vm.test"
     }
   ],
   "presubmit-rust": [
@@ -93,10 +132,19 @@
       "name": "authfs_device_test_src_lib"
     },
     {
+      "name": "avmdtool.test"
+    },
+    {
+      "name": "avmdtool_tests"
+    },
+    {
       "name": "diced_test"
     },
     {
       "name": "diced_vendor_test"
+    },
+    {
+      "name": "encryptedstore.test"
     },
     {
       "name": "keystore2_client_tests"
@@ -114,13 +162,34 @@
       "name": "legacykeystore_test"
     },
     {
+      "name": "libapkverify.integration_test"
+    },
+    {
+      "name": "libapkverify.test"
+    },
+    {
+      "name": "libdm_rust.test"
+    },
+    {
+      "name": "libkmr_derive_test"
+    },
+    {
+      "name": "libkmr_hal_test"
+    },
+    {
+      "name": "libpvmfw_avb.integration_test"
+    },
+    {
       "name": "microdroid_manager_test"
     },
     {
       "name": "serde_test_src_lib"
     },
     {
-      "name": "virtualizationservice_device_test"
+      "name": "virtualizationmanager_device_test"
+    },
+    {
+      "name": "vm.test"
     }
   ]
 }
