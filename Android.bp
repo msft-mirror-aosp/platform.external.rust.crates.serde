@@ -56,9 +56,10 @@ rust_library {
     proc_macros: ["libserde_derive"],
     apex_available: [
         "//apex_available:platform",
-        "com.android.virt",
+        "//apex_available:anyapex",
     ],
     vendor_available: true,
+    min_sdk_version: "29",
 }
 
 rust_test {
