@@ -1,5 +1,6 @@
 {
   "apex-available": [
+    "//apex_available:platform",
     "//apex_available:anyapex"
   ],
   "cfg-blocklist": [
