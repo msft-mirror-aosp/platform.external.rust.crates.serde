@@ -49,15 +49,17 @@ rust_library {
     features: [
         "default",
         "derive",
+        "rc",
         "serde_derive",
         "std",
     ],
     proc_macros: ["libserde_derive"],
     apex_available: [
         "//apex_available:platform",
-        "com.android.virt",
+        "//apex_available:anyapex",
     ],
     vendor_available: true,
+    min_sdk_version: "29",
 }
 
 rust_test {
@@ -76,6 +78,7 @@ rust_test {
     features: [
         "default",
         "derive",
+        "rc",
         "serde_derive",
         "std",
     ],
