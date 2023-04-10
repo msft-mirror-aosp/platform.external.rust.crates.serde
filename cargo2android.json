@@ -1,7 +1,7 @@
 {
   "apex-available": [
     "//apex_available:platform",
-    "com.android.virt"
+    "//apex_available:anyapex"
   ],
   "cfg-blocklist": [
     "std_atomic64"
@@ -11,5 +11,6 @@
   "features": "default,derive,rc",
   "run": true,
   "tests": true,
-  "vendor-available": true
+  "vendor-available": true,
+  "min_sdk_version": "29"
 }
