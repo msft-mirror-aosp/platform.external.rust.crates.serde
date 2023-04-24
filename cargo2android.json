@@ -1,8 +1,5 @@
 {
-  "apex-available": [
-    "//apex_available:platform",
-    "//apex_available:anyapex"
-  ],
+  "add-toplevel-block": "cargo2android_nostd.bp",
   "cfg-blocklist": [
     "std_atomic64"
   ],
