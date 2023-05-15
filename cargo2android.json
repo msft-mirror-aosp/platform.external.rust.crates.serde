@@ -6,7 +6,6 @@
   "device": true,
   "min_sdk_version": "29",
   "run": true,
-  "vendor-available": true,
   "variants": [
     {
       "features": "default,derive,rc",
