@@ -1,13 +1,23 @@
 {
-  "add-toplevel-block": "cargo2android_nostd.bp",
   "cfg-blocklist": [
     "std_atomic64"
   ],
   "dependencies": true,
   "device": true,
-  "features": "default,derive,rc",
+  "min_sdk_version": "29",
   "run": true,
-  "tests": true,
-  "vendor-available": true,
-  "min_sdk_version": "29"
+  "variants": [
+    {
+      "features": "default,derive,rc",
+      "tests": true
+    },
+    {
+      "alloc": true,
+      "features": "alloc,derive",
+      "force-rlib": true,
+      "no-host": true,
+      "suffix": "_nostd",
+      "no-std": true
+    }
+  ]
 }
