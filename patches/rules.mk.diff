@@ -1,0 +1,13 @@
+diff --git a/rules.mk b/rules.mk
+index 5e5b3d4..5aeddb1 100644
+--- a/rules.mk
++++ b/rules.mk
+@@ -15,4 +15,8 @@ MODULE_RUSTFLAGS += \
+ 	--cfg 'feature="serde_derive"' \
+ 	--cfg 'feature="std"' \
+ 
++MODULE_LIBRARY_DEPS := \
++	trusty/user/base/lib/liballoc-rust \
++	external/rust/crates/serde_derive \
++
+ include make/library.mk
