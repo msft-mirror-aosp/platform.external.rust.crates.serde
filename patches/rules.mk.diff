@@ -1,0 +1,30 @@
+diff --git a/rules.mk b/rules.mk
+index 442c6fc..986ff0d 100644
+--- a/rules.mk
++++ b/rules.mk
+@@ -13,9 +13,25 @@ MODULE_RUSTFLAGS += \
+ 	--cfg 'feature="default"' \
+ 	--cfg 'feature="derive"' \
+ 	--cfg 'feature="serde_derive"' \
++
++ifeq ($(call TOBOOL,$(TRUSTY_USERSPACE)),true)
++
++MODULE_RUSTFLAGS += \
+ 	--cfg 'feature="std"' \
+
++else
++
++# avoid cyclic dependence by adding dependencies manually
++MODULE_ADD_IMPLICIT_DEPS := false
++
++MODULE_DEPS := \
++	trusty/user/base/lib/libcore-rust/ \
++	trusty/user/base/lib/libcompiler_builtins-rust/ \
++
++endif
++
+ MODULE_LIBRARY_DEPS := \
++	trusty/user/base/lib/liballoc-rust \
+ 	external/rust/crates/serde_derive \
+
+ include make/library.mk
